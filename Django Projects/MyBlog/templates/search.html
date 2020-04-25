@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block body %}
+         <div class="container"><style>.container{height: 100px;width: 100%; background: #292929}</style>
+             <form method="get" action="/search" enctype="multipart/form-data" >
+                <div class=" row form-inline active-cyan-3 active-cyan-4 pt-4">
+                    <input class="form-control col-lg-4 ml-4" name="query" id="query" type="text" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success ml-lg-2 d-inline" type="submit">Search</button>
+                </div>
+             </form>
+         </div>
+          <h2>Search Result</h2>
+        {% for post in posts %}
+      <section>
+        <div class="container border-bottom main_container">
+          <div class="media">
+            <img class="rounded-circle mr-3 align-self text-justify" src="{% static 'images/baby.jpg' %}" width="120" height="120">
+            <div class="media-body">
+                    {% if user.is_authenticated %}
+                        <div class="row"><h2 class="col-lg-8"><a href = "{% url 'postdetail' post.id %}">{{ post.title }}</a></h2>
+                        <button type="button"  class="btn btn-dark mt-1 mr-2 ml-5"><a href="{% url 'updatepost' post.id %}" class="text-light">Update Post</a></button>
+                        <button type="button"  class="btn btn-danger mt-1"><a href="{% url 'postdelete' post.id %}" class="text-light">Delete Post</a></button></div>
+                    {% else %}
+                        <div class="row"><h2 class="col-lg-8"><a href = "{% url 'postdetail' post.id %}">{{ post.title }}</a></h2></div>
+                    {% endif %}
+
+                <h5>{{post.username}}</h5>
+                <p class="text-justify">{{ post.content }}</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    {% endfor %}
+{% endblock %}

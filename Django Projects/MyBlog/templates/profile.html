@@ -1,0 +1,23 @@
+       <!-- {% extends 'base.html' %}
+        {% load static %}
+        {% block body %}
+            <section>
+              <div class="card flex mt-2 " style="width: 27rem;">
+                  {% if profile.image %}
+                      <img class="card-img-top " width="180" height="280" src="{{ user.profile.image.url }}" alt="Card image cap">
+                  {% else %}
+                      <img class="card-img-top " width="180" height="280" src="{% static 'media/default.png' %}" alt="Card image cap">
+                  {% endif %}
+                  <div class="card-body row">
+                    <h5 class="card-title col-lg-9 , col-9">{{ user.username }}</h5>
+                    <a href="{% url 'updateprofile' %}">Edit Profile</a>
+                  </div>
+                  <ul class="list-group list-group-flush">
+                    <li class="list-group-item">{{ user.contact_no }}</li>
+                    <li class="list-group-item">{{user.email}}</li>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  </ul>
+              </div>
+          </section>
+    {% endblock %}
+ -->

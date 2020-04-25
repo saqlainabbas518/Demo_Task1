@@ -1,0 +1,27 @@
+{% load static %}
+{% load crispy_forms_tags %}
+<!DOCTYPE html>
+<html>
+<head>
+	 <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{%static 'css/style.css' %}">
+	<title></title>
+</head>
+<body>
+                 {% block content %}
+                    <div class="container bg-dark cnt"><style> .cnt{ height: 100px; width: 100%; }</style>
+                        <h2 class="text-light">You Have Logged Out</h2>
+                    </div>
+                    <div class="container bg-light">
+                        <h5><a href="{% url 'login' %}"><small class="text-dark-blue shadow-lg">Login Again</small></a></h5>
+                    </div>
+                 {% endblock %}
+
+
+
+
+<script src="js/jquery.js"></script>
+<script src="js/bootstrap.min.js"></script>
+</body>
+</html>

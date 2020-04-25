@@ -1,0 +1,66 @@
+body{
+	margin: 0;
+	padding: 0;
+	background-color: #ffffff; 
+	background: url(../images/c14.jpeg) no-repeat center fixed;
+	background-size:cover; 
+}
+.bg-steel {
+  background-color: #005580;
+}
+.main_container{
+	height: 180px;
+	width: 100%;
+	background-color:#e6f2ff; 
+}
+.login_container{
+	margin: 100px auto;
+	height: 400px;
+	width: 400px;
+	border: 2px solid red;
+}
+.main-section{
+	margin-left: auto;
+	margin-right: auto;
+	margin-top:20px;
+	padding: 0px;
+}
+.modal-content{
+		background-color: #e6f2ff;
+		.opacity: .2;
+		padding: 0px 18px;
+}
+.user-img{
+	margin-top: -40px;
+	margin-bottom: 10px;
+}
+.profile_container{
+	width: 100%;
+	overflow: hidden; 
+}
+.card-title{
+	height: 5px;
+}
+.card{
+	margin-left: auto;
+	margin-right: auto;
+}
+.list-group-item{
+	height: 40px; 
+	align-content: center; 
+}
+li{
+	padding-top:auto;
+	padding-bottom: auto; 
+}
+.main{
+	width: 500px;
+	height: 600px;
+	border: 2px solid black;
+}
+ul {
+	display: none;
+}
+.newpost{
+	margin-bottom: -65px;
+}

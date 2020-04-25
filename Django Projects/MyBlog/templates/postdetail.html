@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load static %}
+    {% block body %}
+        <section>
+            <div class="container border-bottom main_container">
+              <div class="media">
+                <img class="rounded-circle mr-3 align-self text-justify" src="{% static 'images/baby.jpg' %}" width="120" height="120">
+                <div class="media-body">
+                  <div class="row"><h2 class="col-lg-8">{{ object.title }}</h2>
+                    <button type="button"  class="btn btn-dark mt-1 mr-2 ml-5 "><a class="text-light" href="{% url 'updatepost' object.id  %}">Update Post</a></button>
+                    <button type="button"  class="btn btn-danger mt-1"><a href="#" class="text-light">Delete Post</a></button>
+                  </div>
+                    <h5>{{object.username}}</h5>
+                    <p class="text-justify">{{ object.content }}</p>
+                </div>
+              </div>
+            </div>
+          </section>
+    {% endblock %}

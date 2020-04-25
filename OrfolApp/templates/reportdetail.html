@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load static %}
+ {% block body %}
+     <div class="container">
+         <div class="card" style="width: 25rem; margin-left: auto;margin-right: auto;">
+             <img src="{{ object.image.url }}" class="card-img-top" alt="Image">
+              <div class="card-body">
+                <h5 class="card-title">{{ object.title }}</h5>
+                  <p class="card-text">{{ object.description }}</p>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">{{ object.subcategories }}</li>
+                <li class="list-group-item">{{ object.categories }}</li>
+                <li class="list-group-item">{{ object.city }} {{ object.subcity }}</li>
+                <li class="list-group-item">{{ object.time }}</li>
+              </ul>
+              <div class="card-body">
+                <a href="{% url 'updatereport' object.id %}" class="btn btn-outline-info ">Edit Report</a>
+                <a href="{% url 'deletereport' object.id %}" class="btn btn-outline-danger ">Delete Report</a>
+              </div>
+         </div>
+     </div>
+ {% endblock %}

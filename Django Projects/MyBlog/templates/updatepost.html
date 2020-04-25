@@ -1,0 +1,23 @@
+
+{% extends 'base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+    {% block body %}
+        <<div class="modal-dialog newpost ">
+			<div class="col-sm-9 main-section">
+				<div class="modal-content">
+                    <h3 class="border-bottom mt-2 text-center bg-light">Update Your Post Here</h3>
+						<div class="col-12 form-input mt-3">
+							<form method="POST">
+								<div class="form-group">
+                                    {% csrf_token %}
+									{{ form|crispy }}
+								</div><br>
+								<button type="submit" class="btn btn-primary offset-lg-2 col-lg-8  mb-3 ">Update Post</button><br>
+
+							</form>
+						</div>
+					</div>
+				</div>
+		</div>
+     {% endblock %}

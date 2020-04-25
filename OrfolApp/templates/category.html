@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+ {% block body %}
+{% for c in all %}
+     <div class="container ml-auto mr-auto">
+         <div class="card w-75">
+          <div class="card-body">
+            <div class="row">
+                 <img  src="{{ c.icon.url }}" class="rounded-circle" width="64" height="64">
+                <h5 class="mr-2">{{ c.get_categories_display }}</h5>
+            </div>
+          </div>
+         </div>
+     </div>
+ {% endfor %}
+ {% endblock %}

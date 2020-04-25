@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+ {% block body %}
+   <div class="container">
+       <div class="media">
+            <img class="mr-3" height="120" width="120" src="{{ user.profile.image.url }}" alt="Image">
+            <div class="media-body">
+                <h5 class="mt-0">{{ user.profile.full_name }}</h5>
+                <p>{{ user.profile.description }}</p>
+            </div>
+        </div>
+
+
+{#       <div class="card-header mt-2 bg-dark text-center text-white">#}
+{#        Your All Reports#}
+{#        </div>#}
+{#       {% for rep in allreports %}#}
+{#        <div class="card w-100">#}
+{#          <div class="card-body">#}
+{#            <h5 class="card-title">{{ rep.title }}</h5>#}
+{#            <p class="card-text">{{ rep.description }}</p>#}
+{#            <a href="#" class="btn btn-primary">Button</a>#}
+{#          </div>#}
+{#            <p class="border-bottom bg-secondary"></p>#}
+{#        </div>#}
+{#        {% endfor %}#}
+   </div>
+ {% endblock %}
