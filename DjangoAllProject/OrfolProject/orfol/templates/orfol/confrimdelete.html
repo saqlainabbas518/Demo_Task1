@@ -1,0 +1,10 @@
+{% load static %}
+{% block content %}
+
+    <form method="POST">
+    {% csrf_token %}
+    <h5>Do you realy want to delete this report</h5>
+    <button class="btn btn-outline-danger">yes , delete</button>
+    </form>
+    <button><a href={% url 'reportdetail' object.id %}></a>Cancel</button>
+{% endblock %}

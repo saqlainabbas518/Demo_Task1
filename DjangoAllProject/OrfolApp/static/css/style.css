@@ -1,0 +1,24 @@
+body{
+    background: #ebebe0;
+}
+.cnt{
+    height: 600px;
+    width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+    border: 2px solid slategrey;
+    overflow:hidden;
+    }
+ul{
+    display: none;
+}
+.category{
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.home{
+    margin-left: auto;
+    margin-right: auto;
+}

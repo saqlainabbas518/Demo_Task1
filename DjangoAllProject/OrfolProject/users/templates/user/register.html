@@ -1,0 +1,15 @@
+{% extends 'orfol/base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+<div class="container register text-center text-white">
+    <h5 class="border-bottom text-white">Register Here</h5>
+    <form method="POST" class="pl-5 col-lg-8 offset-lg-2 mt-5 text-left">
+        {% csrf_token %}
+        {{ form|crispy }}
+        <input type="submit" value="sign up" class="btn btn-primary offset-lg-3  py-2 px-5">
+    </form>
+    <p class="border-top">if You Already have an account <br><a class="text-white text-center" href="{% url 'login' %}"><u>Login</u></a></p>
+
+</div>
+{% endblock content %}

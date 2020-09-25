@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load tz %}
+{% block body %}
+
+
+
+     <div class="container">
+       {% for r in report %}
+      <div class="card text-center">
+          <div class="card-header row">
+            <img class="rounded" width="40" height="34" src="{% static 'media/images/default.png' %}">
+            <h5 class="ml-lg-3">{{ r.title }}</h5>
+          </div>
+              <div class="card-body">
+                <div class="row" >
+                    <img height="180" width="180" src="{{ r.image.url }}">
+                    <div>
+                        <div class="ml-lg-auto ">
+                        <p class="card-text ml-lg-2 row">{{ r.description }}</p>
+                        </div>
+                        <div class="row">
+                        <h5 class="card-title ml-lg-4">{{ r.categories }} : {{ r.subcategories }}</h5>
+                        </div>
+                        <div class="row">
+                        <h5 class="ml-lg-4">{{ r.city }} : {{ r.subcity }}</h5>
+                        </div>
+                        <div class="row">
+                        <p class="ml-lg-4">Reward : {{ r.reward }}</p>
+                        </div>
+                        <div class="row">
+                        <p class="ml-lg-4">{{ r.time }}</p>
+                        </div>
+                     </div>
+                 </div>
+                <a href="{% url 'reportdetail' r.id %}" class="btn btn-primary">View More</a>
+              </div>
+          <div class="card-footer text-muted">
+            <small>{{ r.whenpublished }}</small>
+          </div>
+        </div>
+     {% endfor %}
+     <br>
+     </div>
+ {% endblock %}
+
+{% for r in report %}
+     <h1>{{r.title}}</h1>
+     <h1>{{r.categories}}</h1>
+     {% endfor %}
+

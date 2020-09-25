@@ -1,0 +1,107 @@
+           {% extends 'base.html' %}
+{% load static %}
+{% load tz %}
+{% block body %}
+    <div class="container">
+       <h3>You can Search Report using filters</h3>
+        <hr/>
+      <form method="GET" action=".">
+        <div class="form-row col-lg-8">
+            <div class="form-group col-12">
+                <div class="input-group">
+                    <input class="form-control py-2 border-right-0 border" type="search" name="title_contains" placeholder="Title contains..." />
+                    <span class="input-group-append">
+                        <div class="input-group-text bg-transparent">
+                            <i class="fa fa-search"></i>
+                        </div>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="row ml-lg-auto">
+              <div class="form-group col-md-4 col-lg-4">
+                <label for="category">Category</label>
+                <select id="categories" class="form-control" name="categories">
+                  <option selected>Choose</option>
+                    {% for cat in cats.all %}
+                  <option value="{{ cat }}">{{ cat }}</option>
+                    {% endfor %}
+                </select>
+              </div>
+              <div class="form-group col-md-4 col-lg-4">
+                <label for="category">Sub Category</label>
+                    <select id="subcategories" class="form-control" name="subcategories">
+                          <option selected>Choose</option>
+                          {% for subcat in subcats.all %}
+                          <option value="{{subcat  }}">{{ subcat }}</option>
+                            {% endfor %}
+                    </select>
+              </div>
+          </div>
+
+
+        <button type="submit" class="btn btn-primary col-lg-2 ml-lg-3">Search</button>
+      </form>
+
+      <hr />
+        {% for q in queryset %}
+      <div class="card text-center">
+          <div class="card-header row">
+            <img class="rounded" width="40" height="34" src="{% static 'media/images/default.png' %}">
+            <h5 class="ml-lg-3">{{ q.title }}</h5>
+          </div>
+              <div class="card-body">
+                <div class="row" >
+                    <img height="180" width="180" src="{{ q.image.url }}">
+                    <div>
+                        <div class="ml-lg-auto ">
+                        <p class="card-text ml-lg-2 row">{{ q.description }}</p>
+                        </div>
+                        <div class="row">
+                        <h5 class="card-title ml-lg-4">{{ q.categories }} : {{ q.subcategories }}</h5>
+                        </div>
+                        <div class="row">
+                        <h5 class="ml-lg-4">{{ q.city }} : {{ q.subcity }}</h5>
+                        </div>
+                        <div class="row">
+                        <p class="ml-lg-4">Reward : {{ q.reward }}</p>
+                        </div>
+                        <div class="row">
+                        <p class="ml-lg-4">{{ q.time }}</p>
+                        </div>
+                     </div>
+                 </div>
+                <a href="{% url 'reportdetail' q.id %}" class="btn btn-primary">View More</a>
+              </div>
+          <div class="card-footer text-muted">
+            <small>{{ q.whenpublished }}</small>
+          </div>
+        </div>
+     {% endfor %}
+     <br>
+
+
+{#      <div class="row">#}
+{#        <ul class="d-inline">#}
+{#          {% for q in queryset %}#}
+{##}
+{#              <h5>{{ q.title }}</h5><br>#}
+{#              <li><h1>{{ q.categories }}</h1></li>#}
+{#              <h1>{{ q.subcategories }}</h1>#}
+{#              <h1>{{ q.city }}</h1>#}
+{#              <h1>{{ q.subcity }}</h1><hr/>#}
+{#          {% endfor %}#}
+{#        </ul>#}
+{#      </div>#}
+     </div>
+
+{#                  <select class="ml-auto w-25 mt-2" style="height: 30px;">#}
+{#                    {% for cat in Report.categories %}#}
+{#                        <option type="submit" value="{{ cat.categories }}">{{ cat.categories }}</option>#}
+{#                    {% endfor %}#}
+{#                  </select>#}
+{#                    <select class="w-25" style="height: 30px;">#}
+{#                        <option>abc</option>#}
+{#                    </select></div>#}
+
+{% endblock %}
